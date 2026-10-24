@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search cities and view live weather information.">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="dashboard">
+        <header class="header">
+            <div>
+                <p class="eyebrow">WEATHER FORECAST</p>
+                <h1>Weather Dashboard</h1>
+                <p class="subtitle">Discover the weather around the world.</p>
+            </div>
+            <div class="header-icon" aria-hidden="true">🌤️</div>
+        </header>
+
+        <form id="search-form" class="search-form">
+            <label class="sr-only" for="city-input">Enter city name</label>
+            <input
+                type="text"
+                id="city-input"
+                placeholder="Enter city name, e.g. Meerut"
+                autocomplete="off"
+                required
+            >
+            <button type="submit" id="search-button">
+                Search
+            </button>
+        </form>
+
+        <p id="status" class="status" role="status" aria-live="polite">
+            Search for a city to see its weather.
+        </p>
+
+        <section id="weather-panel" class="weather-panel" hidden>
+            <div class="location-row">
+                <div>
+                    <p class="eyebrow">CURRENT WEATHER</p>
+                    <h2 id="city-name">City Name</h2>
+                    <p id="local-time" class="muted"></p>
+                </div>
+                <div id="weather-icon" class="weather-icon"
+                     aria-hidden="true">🌤️</div>
+            </div>
+
+            <div class="temperature-row">
+                <p id="temperature" class="temperature">--°C</p>
+                <p id="description" class="description">Weather condition</p>
+            </div>
+
+            <div class="metrics">
+                <article class="metric-card">
+                    <span class="metric-icon" aria-hidden="true">💧</span>
+                    <p>Humidity</p>
+                    <h3 id="humidity">--%</h3>
+                </article>
+
+                <article class="metric-card">
+                    <span class="metric-icon" aria-hidden="true">💨</span>
+                    <p>Wind Speed</p>
+                    <h3 id="wind-speed">-- km/h</h3>
+                </article>
+
+                <article class="metric-card">
+                    <span class="metric-icon" aria-hidden="true">🌡️</span>
+                    <p>Feels Like</p>
+                    <h3 id="feels-like">--°C</h3>
+                </article>
+            </div>
+
+            <p class="updated" id="updated"></p>
+        </section>
+
+        <footer>
+            <p>Weather data provided by
+                <a href="https://open-meteo.com/" target="_blank"
+                   rel="noopener noreferrer">Open-Meteo</a>.
+            </p>
+        </footer>
+    </main>
+</body>
+</html>

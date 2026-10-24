@@ -1,0 +1,247 @@
+
+/* General page styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #102542, #246a9b, #69b7d6);
+    color: #ffffff;
+    padding: 40px 18px;
+}
+
+.dashboard {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 32px;
+    background: rgba(12, 35, 62, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+}
+
+.header,
+.location-row,
+.temperature-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.header {
+    margin-bottom: 28px;
+}
+
+.eyebrow {
+    color: #a7dfff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 9px;
+}
+
+h1 {
+    font-size: clamp(25px, 5vw, 38px);
+    margin-bottom: 10px;
+}
+
+.subtitle,
+.muted {
+    color: #c6d8e8;
+    line-height: 1.6;
+}
+
+.header-icon {
+    font-size: 54px;
+}
+
+.search-form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.search-form input {
+    min-width: 0;
+    flex: 1;
+    padding: 15px 17px;
+    border: 1px solid #a5c8df;
+    border-radius: 12px;
+    outline: none;
+    background: #ffffff;
+    color: #172d43;
+    font-size: 16px;
+}
+
+.search-form input:focus {
+    outline: 3px solid #83d9ff;
+    outline-offset: 2px;
+}
+
+.search-form button {
+    padding: 14px 23px;
+    border: none;
+    border-radius: 12px;
+    background: #69d0ff;
+    color: #102542;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background: #a2e5ff;
+}
+
+.search-form button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.status {
+    min-height: 24px;
+    color: #d6e8f5;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.weather-panel {
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.weather-panel[hidden] {
+    display: none;
+}
+
+.location-row h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.weather-icon {
+    font-size: 60px;
+}
+
+.temperature-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+    margin: 24px 0;
+}
+
+.temperature {
+    font-size: clamp(58px, 12vw, 88px);
+    font-weight: 700;
+    letter-spacing: -4px;
+}
+
+.description {
+    color: #cce6f6;
+    font-size: 19px;
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.metric-card {
+    padding: 22px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.metric-icon {
+    font-size: 27px;
+}
+
+.metric-card p {
+    margin: 12px 0 8px;
+    color: #c6d8e8;
+    font-size: 14px;
+}
+
+.metric-card h3 {
+    font-size: 22px;
+}
+
+.updated {
+    margin-top: 22px;
+    color: #c6d8e8;
+    font-size: 13px;
+}
+
+footer {
+    margin-top: 28px;
+    text-align: center;
+    color: #c6d8e8;
+    font-size: 13px;
+}
+
+footer a {
+    color: #9ee2ff;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (max-width: 560px) {
+    body {
+        padding: 18px 10px;
+    }
+
+    .dashboard {
+        padding: 22px 16px;
+        border-radius: 18px;
+    }
+
+    .header-icon {
+        font-size: 38px;
+    }
+
+    .search-form {
+        flex-direction: column;
+    }
+
+    .search-form button {
+        width: 100%;
+    }
+
+    .metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .metric-card {
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        align-items: center;
+        column-gap: 10px;
+        padding: 15px;
+    }
+
+    .metric-card p {
+        margin: 0;
+    }
+
+    .metric-card h3 {
+        grid-column: 2;
+    }
+}
